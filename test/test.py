@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 
 URL = 'https://www.premierleague.com/players'
 
-page = requests.get(URL, auth=HTTPBasicAuth('warllokc@yahoo.com', 'Petrici-89'))
+page = requests.get(URL, auth=HTTPBasicAuth('login', 'password'))
 soup = BeautifulSoup(page.content, "html.parser")
 # results = soup.find_all("tbody", class_="dataContainer indexSection")
 
