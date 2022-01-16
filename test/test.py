@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 URL = 'https://www.premierleague.com/players'
 
-page = requests.get(URL, auth=HTTPBasicAuth('warllokc@yahoo.com', 'Petrici-89'))
+page = requests.get(URL, auth=HTTPBasicAuth('login', 'password'))
 soup = BeautifulSoup(page.content, "html.parser")
 players_table =soup.select('.playerName')
 print((type(players_table)))
