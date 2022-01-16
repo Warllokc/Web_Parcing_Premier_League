@@ -11,7 +11,6 @@ players_table =soup.select('.playerName')
 print((type(players_table)))
 print(len(players_table))
 
-# TODO: Collect antire dictionare of the players
 
 empty_player_dictionary = {}
 def scrape_Player_data():
