@@ -65,10 +65,12 @@ def scrape_player_data():
             # Adding to dictionary image_link
                 empty_player_dictionary["image_link"] = picture.get('src').replace("//", "")
 
-            # Adding to dictionary position, date of birth, height
+            # Adding to dictionary position, date of birth, height and link
             empty_player_dictionary["position"] = player_data[0].next
             empty_player_dictionary["date_of_birth"] = player_data[2].next.strip()
             empty_player_dictionary["height"] = player_data[3].next
+            empty_player_dictionary["player_link"] = URL
+
             id += 1
 
 
