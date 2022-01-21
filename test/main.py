@@ -82,5 +82,5 @@ def scrape_player_data():
         elif id == 63 or id ==90 or id == 144:
             id+=1
 
-scrape_Player_data()
+scrape_player_data()
 
