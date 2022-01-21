@@ -17,7 +17,7 @@ from selenium.webdriver.chrome.service import Service
 
 empty_player_dictionary = {}
 
-def scrape_Player_data():
+def scrape_player_data():
     id = 1
     while True:
 
@@ -79,7 +79,7 @@ def scrape_Player_data():
             break
         if id == 30 or id == 120:
             id += 2
-        elif id == 63 or id ==90:
+        elif id == 63 or id ==90 or id == 144:
             id+=1
 
 scrape_Player_data()
