@@ -11,7 +11,7 @@ from selenium.common.exceptions import NoSuchElementException, StaleElementRefer
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 
-import test
+import main
 
 
 #TODO: Scroll through entire page
@@ -19,7 +19,7 @@ import test
 chromedriver_service = Service("C:\\Users\\alexandr\\Downloads\\chromedriver\\chromedriver.exe")
 chrome_option = webdriver.ChromeOptions()
 browser = webdriver.Chrome(service=chromedriver_service, options=chrome_option)
-browser.get(test.URL)
+browser.get(main.URL)
 time.sleep(3)
 browser.maximize_window()
 
@@ -37,9 +37,9 @@ def scrolling():
         except ElementNotInteractableException:
                 # scrolling()
                 print("Reached bottom of page")
-                test.scrape_Player_data()
-                print(test.empty_player_dictionary)
-                print(len(test.empty_player_dictionary))
+                main.scrape_Player_data()
+                print(main.empty_player_dictionary)
+                print(len(main.empty_player_dictionary))
                 break
 
 
