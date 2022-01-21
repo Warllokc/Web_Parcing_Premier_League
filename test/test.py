@@ -20,6 +20,7 @@ empty_player_dictionary = {}
 def scrape_Player_data():
     id = 1
     while True:
+
         empty_player_dictionary["id"] = id
 
         URL = "https://www.premierleague.com/players/" + str(id)
@@ -41,12 +42,18 @@ def scrape_Player_data():
         if rec.status_code == 200:
             soup = BeautifulSoup(rec.content, "html.parser")
             player_data = soup.findAll("div", class_ ="info")
+            player_country = soup.findAll("span", class_ ="playerCountry")
+
             ########
             # if not player_data[0].next:
             #     id+=1
             # #######
+
             picture = soup.findAll('img')[42]
+
+            # Adding to dictionary name, country of origin
             empty_player_dictionary["name"] = picture.get('alt')
+            empty_player_dictionary["country"] = player_country[0].next
 
             if "Photo-Missing" in picture.get('src') and picture.get('data-player'):
                 a_string = str(picture.get('src')).replace("Photo-Missing", str(picture.get('data-player')))
@@ -58,23 +65,21 @@ def scrape_Player_data():
             # Adding to dictionary image_link
                 empty_player_dictionary["image_link"] = picture.get('src').replace("//", "")
 
-            # Adding to dictionary name
-            empty_player_dictionary["name"] = picture.get('alt')
-
             # Adding to dictionary position, date of birth, height
             empty_player_dictionary["position"] = player_data[0].next
             empty_player_dictionary["date_of_birth"] = player_data[2].next.strip()
             empty_player_dictionary["height"] = player_data[3].next
             id += 1
 
+
             print(empty_player_dictionary)
 
         else:
             print("end of Parsing")
             break
-        if id == 30:
+        if id == 30 or id == 120:
             id += 2
-        elif id == 63:
+        elif id == 63 or id ==90:
             id+=1
 
 scrape_Player_data()
