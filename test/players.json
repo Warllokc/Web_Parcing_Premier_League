@@ -1,1 +1,262 @@
-{"id": 30, "name": "Hublot", "country": "England", "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p2070.png", "position": "Forward", "date_of_birth": "03/11/1963", "height": "180cm", "player_link": "https://www.premierleague.com/players/29"}{"id": 30, "name": "Hublot", "country": "England", "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p2070.png", "position": "Forward", "date_of_birth": "03/11/1963", "height": "180cm", "player_link": "https://www.premierleague.com/players/29"}
+{
+    "id": 1,
+    "name": "David Seaman",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p9.png",
+    "position": "Goalkeeper",
+    "date_of_birth": "19/09/1963",
+    "height": "193cm",
+    "player_link": "https://www.premierleague.com/players/1"
+}{
+    "id": 2,
+    "name": "Alan Miller",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1034.png",
+    "position": "Goalkeeper",
+    "date_of_birth": "29/03/1970",
+    "height": "191cm",
+    "player_link": "https://www.premierleague.com/players/2"
+}{
+    "id": 3,
+    "name": "Tony Adams",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1595.png",
+    "position": "Defender",
+    "date_of_birth": "10/10/1966",
+    "height": "191cm",
+    "player_link": "https://www.premierleague.com/players/3"
+}{
+    "id": 4,
+    "name": "Colin Pates",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p17040.png",
+    "position": "Defender",
+    "date_of_birth": "10/08/1961",
+    "height": "183cm",
+    "player_link": "https://www.premierleague.com/players/4"
+}{
+    "id": 5,
+    "name": "Gavin McGowan",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p3242.png",
+    "position": "Defender",
+    "date_of_birth": "16/01/1976",
+    "height": "180cm",
+    "player_link": "https://www.premierleague.com/players/5"
+}{
+    "id": 6,
+    "name": "Pal Lydersen",
+    "country": "Norway",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p17002.png",
+    "position": "Defender",
+    "date_of_birth": "10/09/1965",
+    "height": "183cm",
+    "player_link": "https://www.premierleague.com/players/6"
+}{
+    "id": 7,
+    "name": "Steve Morrow",
+    "country": "Northern Ireland",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1497.png",
+    "position": "Defender",
+    "date_of_birth": "02/07/1970",
+    "height": "183cm",
+    "player_link": "https://www.premierleague.com/players/7"
+}{
+    "id": 8,
+    "name": "David O'Leary",
+    "country": "Ireland",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p8885.png",
+    "position": "Defender",
+    "date_of_birth": "02/05/1958",
+    "height": "186cm",
+    "player_link": "https://www.premierleague.com/players/8"
+}{
+    "id": 9,
+    "name": "Steve Bould",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1957.png",
+    "position": "Defender",
+    "date_of_birth": "16/11/1962",
+    "height": "193cm",
+    "player_link": "https://www.premierleague.com/players/9"
+}{
+    "id": 10,
+    "name": "Scott Marshall",
+    "country": "Scotland",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1954.png",
+    "position": "Defender",
+    "date_of_birth": "01/05/1973",
+    "height": "185cm",
+    "player_link": "https://www.premierleague.com/players/10"
+}{
+    "id": 11,
+    "name": "Nigel Winterburn",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p11.png",
+    "position": "Defender",
+    "date_of_birth": "11/12/1963",
+    "height": "173cm",
+    "player_link": "https://www.premierleague.com/players/11"
+}{
+    "id": 12,
+    "name": "Andy Linighan",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1555.png",
+    "position": "Defender",
+    "date_of_birth": "18/06/1962",
+    "height": "193cm",
+    "player_link": "https://www.premierleague.com/players/12"
+}{
+    "id": 13,
+    "name": "Lee Dixon",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1591.png",
+    "position": "Defender",
+    "date_of_birth": "17/03/1964",
+    "height": "173cm",
+    "player_link": "https://www.premierleague.com/players/13"
+}{
+    "id": 14,
+    "name": "Martin Keown",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p14.png",
+    "position": "Defender",
+    "date_of_birth": "24/07/1966",
+    "height": "185cm",
+    "player_link": "https://www.premierleague.com/players/14"
+}{
+    "id": 15,
+    "name": "Jimmy Carter",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p16918.png",
+    "position": "Midfielder",
+    "date_of_birth": "09/11/1965",
+    "height": "178cm",
+    "player_link": "https://www.premierleague.com/players/15"
+}{
+    "id": 16,
+    "name": "Mark Flatts",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p16942.png",
+    "position": "Midfielder",
+    "date_of_birth": "14/10/1972",
+    "height": "168cm",
+    "player_link": "https://www.premierleague.com/players/16"
+}{
+    "id": 17,
+    "name": "John Jensen",
+    "country": "Denmark",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p23336.png",
+    "position": "Midfielder",
+    "date_of_birth": "03/05/1965",
+    "height": "178cm",
+    "player_link": "https://www.premierleague.com/players/17"
+}{
+    "id": 18,
+    "name": "David Hillier",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p3115.png",
+    "position": "Midfielder",
+    "date_of_birth": "19/12/1969",
+    "height": "178cm",
+    "player_link": "https://www.premierleague.com/players/18"
+}{
+    "id": 19,
+    "name": "Ray Parlour",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1622.png",
+    "position": "Midfielder",
+    "date_of_birth": "07/03/1973",
+    "height": "178cm",
+    "player_link": "https://www.premierleague.com/players/19"
+}{
+    "id": 20,
+    "name": "Ian Selley",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1580.png",
+    "position": "Midfielder",
+    "date_of_birth": "14/06/1974",
+    "height": "175cm",
+    "player_link": "https://www.premierleague.com/players/20"
+}{
+    "id": 21,
+    "name": "Paul Davis",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p8878.png",
+    "position": "Midfielder",
+    "date_of_birth": "09/12/1961",
+    "height": "178cm",
+    "player_link": "https://www.premierleague.com/players/21"
+}{
+    "id": 22,
+    "name": "Anders Limpar",
+    "country": "Sweden",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p8879.png",
+    "position": "Midfielder",
+    "date_of_birth": "24/09/1965",
+    "height": "172cm",
+    "player_link": "https://www.premierleague.com/players/22"
+}{
+    "id": 23,
+    "name": "Paul Merson",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1618.png",
+    "position": "Midfielder",
+    "date_of_birth": "20/03/1968",
+    "height": "183cm",
+    "player_link": "https://www.premierleague.com/players/23"
+}{
+    "id": 24,
+    "name": "Paul Shaw",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p3357.png",
+    "position": "Midfielder",
+    "date_of_birth": "04/09/1973",
+    "height": "180cm",
+    "player_link": "https://www.premierleague.com/players/24"
+}{
+    "id": 25,
+    "name": "Kevin Campbell",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1746.png",
+    "position": "Forward",
+    "date_of_birth": "04/02/1970",
+    "height": "183cm",
+    "player_link": "https://www.premierleague.com/players/25"
+}{
+    "id": 26,
+    "name": "Alan Smith",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p8889.png",
+    "position": "Forward",
+    "date_of_birth": "21/11/1962",
+    "height": "191cm",
+    "player_link": "https://www.premierleague.com/players/26"
+}{
+    "id": 27,
+    "name": "Paul Dickov",
+    "country": "Scotland",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p1190.png",
+    "position": "Forward",
+    "date_of_birth": "01/11/1972",
+    "height": "168cm",
+    "player_link": "https://www.premierleague.com/players/27"
+}{
+    "id": 28,
+    "name": "Neil Heaney",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p2497.png",
+    "position": "Forward",
+    "date_of_birth": "11/08/1972",
+    "height": "175cm",
+    "player_link": "https://www.premierleague.com/players/28"
+}{
+    "id": 29,
+    "name": "Ian Wright",
+    "country": "England",
+    "image_link": "resources.premierleague.com/premierleague/photos/players/250x250/p2070.png",
+    "position": "Forward",
+    "date_of_birth": "03/11/1963",
+    "height": "180cm",
+    "player_link": "https://www.premierleague.com/players/29"
+}

@@ -70,13 +70,10 @@ def scrape_player_data():
                 empty_player_dictionary["player_link"] = URL
 
                 # # convert and add to Json file
-                # with open("players.json", "a") as outfile:
-                #     json.dump(empty_player_dictionary, outfile)
+                with open("players.json", "a") as outfile:
+                    outfile.write(json.dumps(empty_player_dictionary, indent=4))
 
                 id += 1
-
-                print(empty_player_dictionary)
-
 
             else:
                 print("end of Parsing")
@@ -84,16 +81,11 @@ def scrape_player_data():
 
         except IndexError:
             id+=1
-            break
+            continue
 
 
-
-def write_json():
-    with open("players.json", "a") as outfile:
-        json.dump(empty_player_dictionary, outfile)
 
 
 scrape_player_data()
-write_json()
 
 
