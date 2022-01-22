@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 import requests
 import json
 from requests.auth import HTTPBasicAuth
@@ -14,13 +16,15 @@ from selenium.common.exceptions import NoSuchElementException, StaleElementRefer
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 
-
 empty_player_dictionary = {}
+
 
 def scrape_player_data():
     id = 1
+
     while True:
         try:
+
             empty_player_dictionary["id"] = id
 
             URL = "https://www.premierleague.com/players/" + str(id)
@@ -65,16 +69,31 @@ def scrape_player_data():
                 empty_player_dictionary["height"] = player_data[3].next
                 empty_player_dictionary["player_link"] = URL
 
+                # convert and add to Json file
+                with open("players.json", "a") as outfile:
+                    json.dump(empty_player_dictionary, outfile)
+
                 id += 1
 
                 print(empty_player_dictionary)
 
+
             else:
                 print("end of Parsing")
                 break
+
         except IndexError:
             id+=1
-            continue
+            break
+
+
+
+def write_json():
+    with open("players.json", "w") as outfile:
+        json.dump(empty_player_dictionary, outfile)
+
 
 scrape_player_data()
+write_json()
+
 
