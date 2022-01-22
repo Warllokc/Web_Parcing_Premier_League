@@ -69,9 +69,9 @@ def scrape_player_data():
                 empty_player_dictionary["height"] = player_data[3].next
                 empty_player_dictionary["player_link"] = URL
 
-                # convert and add to Json file
-                with open("players.json", "a") as outfile:
-                    json.dump(empty_player_dictionary, outfile)
+                # # convert and add to Json file
+                # with open("players.json", "a") as outfile:
+                #     json.dump(empty_player_dictionary, outfile)
 
                 id += 1
 
@@ -89,7 +89,7 @@ def scrape_player_data():
 
 
 def write_json():
-    with open("players.json", "w") as outfile:
+    with open("players.json", "a") as outfile:
         json.dump(empty_player_dictionary, outfile)
 
 
