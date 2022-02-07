@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from  sqlalchemy.ext.declarative import declarative_base
 from tqdm import tqdm
 engine = create_engine('postgresql://oisolqzxghhhjp:e3a898afdb19bea8c2b6864347f1da303f6fdfe443637715112252cffd87d9d6@'
-                       'ec2-3-224-157-224.compute-1.amazonaws.com:5432/d8uo0fbra6958c', echo=True)
+                       'ec2-3-224-157-224.compute-1.amazonaws.com:5432/d8uo0fbra6958c', echo=False)
 
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -26,9 +26,9 @@ class Player_Table(Base):
 Base.metadata.create_all(engine)
 
 def add_player_data(name, country, image, position, date, height,link):
-    global id
-    players_table = session.query(Player_Table).all()
-    pbar = tqdm(total=len(players_table))
+    # global id
+    # players_table = session.query(Player_Table)
+    # pbar = tqdm(total=len(players_table))
     player_data = Player_Table()
 
     for player in players_table:
@@ -76,7 +76,8 @@ def update_player_name(old_player_name, new_name):
 
 
 ############# parsing JSON file
-# add_player_data("David Seaman","England","resources.premierleague.com/premierleague/photos/players/250x250/p9.png",
-#                 "Goalkeeper", "19/09/1963", "193cm", "https://www.premierleague.com/players/1")
+add_player_data("David Seaman","England","resources.premierleague.com/premierleague/photos/players/250x250/p9.png",
+                "Goalkeeper", "19/09/1963", "193cm", "https://www.premierleague.com/players/1")
+
 # delete_player_data("alex")
 # update_player_name("David Seaman", "alex")

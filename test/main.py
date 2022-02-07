@@ -4,8 +4,7 @@ import json
 import grequests
 
 from bs4 import BeautifulSoup
-
-
+empty_player_list = []
 
 STEP = 50
 
@@ -31,38 +30,28 @@ def get_async_data(urls):
 
 
 def pareser(data):
-    empty_player_dictionary = {}
-    test = []
+
     try:
         soup = BeautifulSoup(data.content, "html.parser")
         player_data = soup.findAll("div", class_="info")
         player_country = soup.findAll("span", class_="playerCountry")
         picture = soup.findAll('img')[42]
-
-        # Adding to dictionary name, country of origin
-        empty_player_dictionary["name"] = picture.get('alt')
-        empty_player_dictionary["country"] = player_country[0].next
-        test.append({"name": picture.get('alt'), "country": player_country[0].next})
-
-
+        # Adding to the list image_link
         if "Photo-Missing" in picture.get('src') and picture.get('data-player'):
             a_string = str(picture.get('src')).replace("Photo-Missing", str(picture.get('data-player')))
-
-            # Adding to dictionary image_link
-            empty_player_dictionary["image_link"] = a_string.replace("//", "")
+            photo = a_string.replace("//", "")
         else:
-            # Adding to dictionary image_link
-            empty_player_dictionary["image_link"] = picture.get('src').replace("//", "")
-
-        # Adding to dictionary position, date of birth, height and link
-        empty_player_dictionary["position"] = player_data[0].next
-        empty_player_dictionary["date_of_birth"] = player_data[2].next.strip()
-        empty_player_dictionary["height"] = player_data[3].next
-        empty_player_dictionary["player_link"] = data.url
-
-        print(f"{empty_player_dictionary}")
-
-        add_to_json(empty_player_dictionary)
+            photo = picture.get('src').replace("//", "")
+        # Adding to the list name, country, image_link, position, date of birth, height and player_link
+        empty_player_list.append({"name": picture.get('alt'),
+                                 "country": player_country[0].next,
+                                 "image_link": photo,
+                                 "position": player_data[0].next,
+                                  "date_of_birth": player_data[2].next.strip(),
+                                  "height": player_data[3].next,
+                                  "player_link": data.url
+        })
+        print(f"{empty_player_list}")
 
     except:
         pass
@@ -70,7 +59,7 @@ def pareser(data):
 
 def add_to_json(data):
     with open("players.json", "a") as outfile:
-        outfile.write(json.dumps(data, indent=4, separators=(",","=")))
+        outfile.write(json.dumps(data, indent=4))
 
 
 def scrape_player_data():
@@ -84,3 +73,4 @@ def scrape_player_data():
 
 
 scrape_player_data()
+add_to_json(empty_player_list)
