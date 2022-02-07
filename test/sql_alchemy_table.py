@@ -7,9 +7,8 @@ engine = create_engine('postgresql://oisolqzxghhhjp:e3a898afdb19bea8c2b6864347f1
 
 Session = sessionmaker(bind=engine)
 session = Session()
-id = 1
-
 Base = declarative_base()
+
 
 class Player_Table(Base):
     __tablename__ = "Primier_League_players"
@@ -25,24 +24,17 @@ class Player_Table(Base):
 
 Base.metadata.create_all(engine)
 
-def add_player_data(name, country, image, position, date, height,link):
-    # global id
-    # players_table = session.query(Player_Table)
-    # pbar = tqdm(total=len(players_table))
-    player_data = Player_Table()
 
-    for player in players_table:
-        key = session.query(Player_Table).filter_by(id=player.id).first()
-        if key in players_table:
-                id+=1
+def add_player_data(name, country, image, position, date, height,link):
+    players_table = session.query(Player_Table)
+    player_data = Player_Table()
     existed_player = session.query(Player_Table).filter_by(name=name).first()
 
     if existed_player in players_table:
         print()
-        return "Player already added to DB"
+        return f"{existed_player} already added to DB"
 
     else:
-        player_data.id = id
         player_data.name = name
         player_data.country = country
         player_data.image_link = image
@@ -51,9 +43,9 @@ def add_player_data(name, country, image, position, date, height,link):
         player_data.height = height
         player_data.player_link = link
         session.add(player_data)
-        pbar.update(1)
-        id+=1
+
         session.commit()
+
 
 def delete_player_data(player_name):
     players_data = session.query(Player_Table).all()
@@ -65,6 +57,7 @@ def delete_player_data(player_name):
     session.delete(premier)
     session.commit()
 
+
 def update_player_name(old_player_name, new_name):
     players_data = session.query(Player_Table).all()
     pbar = tqdm(total=len(players_data))
@@ -75,9 +68,9 @@ def update_player_name(old_player_name, new_name):
     session.commit()
 
 
-############# parsing JSON file
-add_player_data("David Seaman","England","resources.premierleague.com/premierleague/photos/players/250x250/p9.png",
-                "Goalkeeper", "19/09/1963", "193cm", "https://www.premierleague.com/players/1")
+############# Test the functions
+# add_player_data("David Seaman","England","resources.premierleague.com/premierleague/photos/players/250x250/p9.png",
+#                 "Goalkeeper", "19/09/1963", "193cm", "https://www.premierleague.com/players/1")
 
 # delete_player_data("alex")
 # update_player_name("David Seaman", "alex")

@@ -4,6 +4,9 @@ import json
 import grequests
 
 from bs4 import BeautifulSoup
+
+import sql_alchemy_table as sql_table
+
 empty_player_list = []
 
 STEP = 50
@@ -22,6 +25,8 @@ HEDERS = {"accept": "*/*",
                "sec-fetch-site": "cross-site",
                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36}"}
 
+# ADDING PLAYERS DATA TO JSON FILE
+
 
 def get_async_data(urls):
     reqs = [grequests.get(link, headers=HEDERS) for link in urls]
@@ -29,7 +34,7 @@ def get_async_data(urls):
     return responses
 
 
-def pareser(data):
+def pareser_add_json(data):
 
     try:
         soup = BeautifulSoup(data.content, "html.parser")
@@ -62,15 +67,52 @@ def add_to_json(data):
         outfile.write(json.dumps(data, indent=4))
 
 
-def scrape_player_data():
+def scrape_player_data_json():
     list_a = [f"{URL}{count}" for count in range(1, 2000)]
     output = [list_a[i:i + STEP] for i in range(0, len(list_a), STEP)]
     for url in output:
         for resopnd in get_async_data(url):
             if resopnd and resopnd.status_code == 200:
-                pareser(resopnd)
+                pareser_add_json(resopnd)
 
 
+# SCRAPE AND ADD DATA TO JSON FILE
+# scrape_player_data_json()
+# add_to_json(empty_player_list)
 
-scrape_player_data()
-add_to_json(empty_player_list)
+
+# ADDING PLAYERS DATA TO DB
+
+def pareser_add_to_db(data):
+    try:
+        soup = BeautifulSoup(data.content, "html.parser")
+        player_data = soup.findAll("div", class_="info")
+        player_country = soup.findAll("span", class_="playerCountry")
+        picture = soup.findAll('img')[42]
+        # Adding to the list image_link
+        if "Photo-Missing" in picture.get('src') and picture.get('data-player'):
+            a_string = str(picture.get('src')).replace("Photo-Missing", str(picture.get('data-player')))
+            photo = a_string.replace("//", "")
+        else:
+            photo = picture.get('src').replace("//", "")
+        # Adding to to db, country, image_link, position, date of birth, height and player_link
+        sql_table.add_player_data(picture.get('alt'), player_country[0].next, photo, player_data[0].next,
+                                  player_data[2].next.strip(), player_data[3].next, data.url)
+
+        print(f"{picture.get('alt')} added to DB")
+
+    except:
+        pass
+
+
+def scrape_player_data_to_db():
+    list_a = [f"{URL}{count}" for count in range(1, 2000)]
+    output = [list_a[i:i + STEP] for i in range(0, len(list_a), STEP)]
+    for url in output:
+        for resopnd in get_async_data(url):
+            if resopnd and resopnd.status_code == 200:
+                pareser_add_to_db(resopnd)
+
+
+# SCRAPE AND ADD DATA TO DB
+scrape_player_data_to_db()
