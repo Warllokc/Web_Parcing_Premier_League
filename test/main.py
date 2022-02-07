@@ -5,7 +5,7 @@ import grequests
 
 from bs4 import BeautifulSoup
 
-empty_player_dictionary = {}
+
 
 STEP = 50
 
@@ -31,6 +31,8 @@ def get_async_data(urls):
 
 
 def pareser(data):
+    empty_player_dictionary = {}
+    test = []
     try:
         soup = BeautifulSoup(data.content, "html.parser")
         player_data = soup.findAll("div", class_="info")
@@ -40,6 +42,9 @@ def pareser(data):
         # Adding to dictionary name, country of origin
         empty_player_dictionary["name"] = picture.get('alt')
         empty_player_dictionary["country"] = player_country[0].next
+        test.append({"name": picture.get('alt'), "country": player_country[0].next})
+
+
         if "Photo-Missing" in picture.get('src') and picture.get('data-player'):
             a_string = str(picture.get('src')).replace("Photo-Missing", str(picture.get('data-player')))
 
@@ -54,7 +59,9 @@ def pareser(data):
         empty_player_dictionary["date_of_birth"] = player_data[2].next.strip()
         empty_player_dictionary["height"] = player_data[3].next
         empty_player_dictionary["player_link"] = data.url
+
         print(f"{empty_player_dictionary}")
+
         add_to_json(empty_player_dictionary)
 
     except:
@@ -63,7 +70,7 @@ def pareser(data):
 
 def add_to_json(data):
     with open("players.json", "a") as outfile:
-        outfile.write(json.dumps(data, indent=4))
+        outfile.write(json.dumps(data, indent=4, separators=(",","=")))
 
 
 def scrape_player_data():

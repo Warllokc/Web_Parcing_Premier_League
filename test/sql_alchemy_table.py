@@ -42,7 +42,6 @@ def add_player_data(name, country, image, position, date, height,link):
         return "Player already added to DB"
 
     else:
-
         player_data.id = id
         player_data.name = name
         player_data.country = country
@@ -77,7 +76,7 @@ def update_player_name(old_player_name, new_name):
 
 
 ############# parsing JSON file
-add_player_data("David Seaman","England","resources.premierleague.com/premierleague/photos/players/250x250/p9.png",
-                "Goalkeeper", "19/09/1963", "193cm", "https://www.premierleague.com/players/1")
-delete_player_data("David Seaman")
-update_player_name("David Seaman", "alex")
+# add_player_data("David Seaman","England","resources.premierleague.com/premierleague/photos/players/250x250/p9.png",
+#                 "Goalkeeper", "19/09/1963", "193cm", "https://www.premierleague.com/players/1")
+# delete_player_data("alex")
+# update_player_name("David Seaman", "alex")
